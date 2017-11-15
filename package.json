@@ -1,0 +1,38 @@
+{
+  "name": "cordova-plugin-firebase-realtime",
+  "version": "0.0.1",
+  "description": "Cordova plugin for Firebase Realtime Database",
+  "cordova": {
+    "id": "cordova-plugin-firebase-realtime",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/really99/cordova-plugin-firebase-realtime.git"
+  },
+  "author": "Richard Windley <richard.windley@gmail.com> (https://github.com/really99)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/really99/cordova-plugin-firebase-realtime/issues"
+  },
+  "scripts": {
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
+    "postversion": "git push && git push --tags"
+  },
+  "homepage": "https://github.com/really99/cordova-plugin-firebase-realtime#readme",
+  "keywords": [
+    "cordova",
+    "firebase",
+    "realtime database",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "scripts": {
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
+    "postversion": "git push && git push --tags"
+  }
+}

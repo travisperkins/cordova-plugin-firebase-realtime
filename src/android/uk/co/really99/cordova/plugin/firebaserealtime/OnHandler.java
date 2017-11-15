@@ -45,21 +45,17 @@ public class OnHandler implements ActionHandler {
 
         Log.d(FirebaseRealtimePlugin.TAG, "OnHandler: starting to listen");
 
-        cordova.getThreadPool().execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Query query = queryBuilder.createQuery(path, orderBy, includes, limit);
-                    if (EVENT_TYPE_VALUE.equals(type)) {
-                        listenForValue(query, callbackContext, id);
-                    } else {
-                        listenForChild(query, callbackContext, id, type);
-                    }
-                } catch (JSONException e) {
-                    callbackContext.error(e.getMessage());
-                }
+        try {
+            Query query = queryBuilder.createQuery(path, orderBy, includes, limit);
+            if (EVENT_TYPE_VALUE.equals(type)) {
+                listenForValue(query, callbackContext, id);
+            } else {
+                listenForChild(query, callbackContext, id, type);
             }
-        });
+        } catch (JSONException e) {
+            callbackContext.error(e.getMessage());
+        }
+
         return true;
     }
 

@@ -1,16 +1,11 @@
 package uk.co.really99.cordova.plugin.firebaserealtime;
 
-import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class JSONHelper {

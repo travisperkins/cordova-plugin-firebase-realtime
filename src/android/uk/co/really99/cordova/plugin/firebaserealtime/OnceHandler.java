@@ -33,31 +33,26 @@ public class OnceHandler implements ActionHandler {
 
         Log.d(FirebaseRealtimePlugin.TAG, "OnceHandler: starting to listen for single value");
 
-        cordova.getThreadPool().execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Query query = queryBuilder.createQuery(path, orderBy, includes, limit);
+        try {
+            Query query = queryBuilder.createQuery(path, orderBy, includes, limit);
 
-                    query.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            callbackContext.sendPluginResult(PluginResultHelper.createPluginResult(dataSnapshot, false));
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                            PluginResult errorResult = PluginResultHelper.createPluginResult(databaseError, false);
-                            callbackContext.sendPluginResult(errorResult);
-                        }
-                    });
-                } catch (JSONException e) {
-                    Log.e(FirebaseRealtimePlugin.TAG, "OnceHandler: error", e);
-                    callbackContext.error(e.getMessage());
+            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    callbackContext.sendPluginResult(PluginResultHelper.createPluginResult(dataSnapshot, false));
                 }
-            }
-        });
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                    PluginResult errorResult = PluginResultHelper.createPluginResult(databaseError, false);
+                    callbackContext.sendPluginResult(errorResult);
+                }
+            });
+        } catch (JSONException e) {
+            Log.e(FirebaseRealtimePlugin.TAG, "OnceHandler: error", e);
+            callbackContext.error(e.getMessage());
+        }
 
         return true;
     }

@@ -27,22 +27,18 @@ class PushHandler implements ActionHandler {
 
         Log.d(FirebaseRealtimePlugin.TAG, "PushHandler: pushing data");
 
-        cordova.getThreadPool().execute(new Runnable() {
+        firebaseRealtimePlugin.database.getReference(path).push().setValue(value, new DatabaseReference.CompletionListener() {
             @Override
-            public void run() {
-                firebaseRealtimePlugin.database.getReference(path).push().setValue(value, new DatabaseReference.CompletionListener() {
-                    @Override
-                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
 
-                        if (databaseError != null) {
-                            callbackContext.sendPluginResult(PluginResultHelper.createPluginResult(databaseError, false));
-                        } else {
-                            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, path + '/' + databaseReference.getKey()));
-                        }
-                    }
-                });
+                if (databaseError != null) {
+                    callbackContext.sendPluginResult(PluginResultHelper.createPluginResult(databaseError, false));
+                } else {
+                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, path + '/' + databaseReference.getKey()));
+                }
             }
         });
+
         return true;
     }
 }

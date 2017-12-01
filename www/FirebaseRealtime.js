@@ -260,17 +260,6 @@ DbSnapshot.prototype = {
   }
 };
 
-DbSnapshot.prototype[Symbol.iterator] = function() {
-  var index = 0;
-  var data  = this._data;
-
-  return {
-    next: function() {
-      return { value: data[++index], done: !(index in data) }
-    }
-  };
-};
-
 function findChild(path, obj) {
 
   var key = path[0];

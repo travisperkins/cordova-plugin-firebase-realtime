@@ -4,8 +4,8 @@
   <description>Cordova plugin for Firebase Realtime Database</description>
   <license>MIT</license>
   <keywords>cordova</keywords>
-  <repo>https://github.com/really99/cordova-plugin-firebase-realtime</repo>
-  <issue>https://github.com/really99/cordova-plugin-firebase-realtime/issues</issue>
+  <repo>https://github.com/travisperkins/cordova-plugin-firebase-realtime</repo>
+  <issue>https://github.com/travisperkins/cordova-plugin-firebase-realtime/issues</issue>
 
   <engines>
     <engine name="cordova" version=">=6.0.0"/>
@@ -42,7 +42,7 @@
           </js-module>
           <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseRealtime">
-              <param name="android-package" value="uk.co.really99.cordova.plugin.firebaserealtime.FirebaseRealtimePlugin"/>
+              <param name="android-package" value="uk.co.tpplc.cordova.plugin.firebaserealtime.FirebaseRealtimePlugin"/>
               <param name="onload" value="false"/>
             </feature>
           </config-file>
@@ -52,25 +52,25 @@
           <framework src="com.google.firebase:firebase-database:11.0.+"/>
           <framework src="com.google.code.gson:gson:2+"/>
 
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/FirebaseRealtimePlugin.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/ActionHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/ChildListenerRemover.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/InitializeHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/JSONHelper.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/KeepSyncedHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/ListenerRemove.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/OffHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/OnceHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/OnHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/PluginResultHelper.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/PushHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/QueryBuilder.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/RemoveHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/SetHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/SetLoggingHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/SetOnlineHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/UpdateHandler.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
-          <source-file src="src/android/uk/co/really99/cordova/plugin/firebaserealtime/ValueListenerRemove.java" target-dir="src/uk/co/really99/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/FirebaseRealtimePlugin.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/ActionHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/ChildListenerRemover.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/InitializeHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/JSONHelper.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/KeepSyncedHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/ListenerRemove.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/OffHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/OnceHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/OnHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/PluginResultHelper.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/PushHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/QueryBuilder.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/RemoveHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/SetHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/SetLoggingHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/SetOnlineHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/UpdateHandler.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
+          <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/ValueListenerRemove.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
         </platform>
 
       </plugin>

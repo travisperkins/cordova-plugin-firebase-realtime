@@ -1,3 +1,5 @@
+/*global Promise: false, firebase: false */
+
 var PLUGIN_NAME = "FirebaseRealtime";
 
 var loadJS = function(url, implementationCode, location) {

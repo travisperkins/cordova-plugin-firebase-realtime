@@ -1,4 +1,4 @@
-package uk.co.really99.cordova.plugin.firebaserealtime;
+package uk.co.tpplc.cordova.plugin.firebaserealtime;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

@@ -1,8 +1,10 @@
+/*global Promise: false, CustomEvent: false */
+
+"use strict";
+
 var exec = require('cordova/exec');
 var utils = require("cordova/utils");
 var PLUGIN_NAME = "FirebaseRealtime";
-
-"use strict";
 
 function FirebaseRealtime(persist) {
 
@@ -18,25 +20,25 @@ FirebaseRealtime.prototype = {
 
     return new Promise(function(resolve, reject) {
 
-      exec(dispatchEvent, null, PLUGIN_NAME, 'initialize', [self.persist]);
-      resolve();
-
       function dispatchEvent(event) {
         window.dispatchEvent(new CustomEvent(event.type, {
           detail: event.data
         }));
       }
+
+      exec(dispatchEvent, null, PLUGIN_NAME, 'initialize', [self.persist]);
+      resolve();
     });
   },
-  goOnline: function() {
+  goOnline: function(value) {
     this.isOnline = !!value;
-    exec(dispatchEvent, null, PLUGIN_NAME, 'setOnline', [this.isOnline]);
+    exec(null, null, PLUGIN_NAME, 'setOnline', [this.isOnline]);
   },
   ref: function(path) {
     return new DbRef(path);
   },
   refFromUrl: function(url) {
-    throw "FirebaseRealtime.refFromUrl: not supported"
+    throw "FirebaseRealtime.refFromUrl: not supported";
   }
 };
 
@@ -45,7 +47,7 @@ Object.defineProperties(FirebaseRealtime.prototype, {
   online: {
     set: function(value) {
       this.isOnline = !!value;
-      exec(dispatchEvent, null, PLUGIN_NAME, 'setOnline', [this.isOnline]);
+      exec(null, null, PLUGIN_NAME, 'setOnline', [this.isOnline]);
     },
     get: function() {
       return this.isOnline;
@@ -54,7 +56,7 @@ Object.defineProperties(FirebaseRealtime.prototype, {
   loggingEnabled: {
     set: function(value) {
       this.isLoggingEnabled = !!value;
-      exec(dispatchEvent, null, PLUGIN_NAME, 'setLoggingEnabled', [this.isLoggingEnabled]);
+      exec(null, null, PLUGIN_NAME, 'setLoggingEnabled', [this.isLoggingEnabled]);
     },
     get: function() {
       return this.isLoggingEnabled;
@@ -125,7 +127,6 @@ DbQuery.prototype = {
       exec(function(data) {
         var snapshot = new DbSnapshot(data);
         resolve(snapshot);
-        if (typeof fn === 'function') fn(snapshot);
       }, reject, PLUGIN_NAME, "once", args);
     });
   },
@@ -174,7 +175,7 @@ DbRef.prototype = Object.create(DbQuery.prototype, {
     }
   },
   parent: {
-    get: parent = function() {
+    get: function() {
       return this.path.split('/').slice(0, -1).join('/');
     }
   },

@@ -1,4 +1,4 @@
-package uk.co.really99.cordova.plugin.firebaserealtime;
+package uk.co.tpplc.cordova.plugin.firebaserealtime;
 
 import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;

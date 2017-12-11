@@ -5,24 +5,24 @@
   "cordova": {
     "id": "cordova-plugin-firebase-realtime",
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "browser"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/really99/cordova-plugin-firebase-realtime.git"
+    "url": "git+https://github.com/travisperkins/cordova-plugin-firebase-realtime.git"
   },
-  "author": "Richard Windley <richard.windley@gmail.com> (https://github.com/really99)",
+  "author": "Richard Windley <richard.windley@travisperkins.co.uk> (https://github.com/travisperkins)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/really99/cordova-plugin-firebase-realtime/issues"
+    "url": "https://github.com/travisperkins/cordova-plugin-firebase-realtime/issues"
   },
   "scripts": {
     "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
     "postversion": "git push && git push --tags"
   },
-  "homepage": "https://github.com/really99/cordova-plugin-firebase-realtime#readme",
+  "homepage": "https://github.com/travisperkins/cordova-plugin-firebase-realtime#readme",
   "keywords": [
     "cordova",
     "firebase",
@@ -31,6 +31,10 @@
     "cordova-android",
     "cordova-ios"
   ],
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0"
+  },
   "scripts": {
     "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
     "postversion": "git push && git push --tags"

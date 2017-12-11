@@ -1,4 +1,4 @@
-package uk.co.really99.cordova.plugin.firebaserealtime;
+package uk.co.tpplc.cordova.plugin.firebaserealtime;
 
 import android.util.Log;
 
@@ -10,24 +10,25 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class SetHandler implements ActionHandler {
+import java.util.Map;
+
+public class UpdateHandler implements ActionHandler {
 
     private FirebaseRealtimePlugin firebaseRealtimePlugin;
 
-    public SetHandler(FirebaseRealtimePlugin firebaseRealtimePlugin) {
+    public UpdateHandler(FirebaseRealtimePlugin firebaseRealtimePlugin) {
         this.firebaseRealtimePlugin = firebaseRealtimePlugin;
     }
 
-    @Override
     public boolean handle(JSONArray args, final CallbackContext callbackContext) {
 
         try {
-            final String path = args.optString(0);
-            final Object value = JSONHelper.toSettable(args.get(1));
+            final String path = args.getString(0);
+            final Map<String, Object> updates = JSONHelper.toSettableMap(args.optJSONObject(1));
 
-            Log.d(FirebaseRealtimePlugin.TAG, "SetHandler: setting value");
+            Log.d(FirebaseRealtimePlugin.TAG, "UpdateHandler: Updating value");
 
-            firebaseRealtimePlugin.database.getReference(path).setValue(value, new DatabaseReference.CompletionListener() {
+            firebaseRealtimePlugin.database.getReference(path).updateChildren(updates, new DatabaseReference.CompletionListener() {
                 @Override
                 public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
 
@@ -39,8 +40,9 @@ public class SetHandler implements ActionHandler {
                 }
             });
         } catch (JSONException e) {
-            Log.e(FirebaseRealtimePlugin.TAG, "SetHandler", e);
+            e.printStackTrace();
         }
+
         return true;
     }
 }

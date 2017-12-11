@@ -4,11 +4,11 @@
 
 ## Installation
 
-    cordova plugin add https://github.com/Really99/cordova-plugin-firebase-realtime --save
+    cordova plugin add https://github.com/travisperkins/cordova-plugin-firebase-realtime --save
 
 or
 
-    phonegap plugin add https://github.com/Really99/cordova-plugin-firebase-realtime
+    phonegap plugin add https://github.com/travisperkins/cordova-plugin-firebase-realtime
 
 # Proxy
 
@@ -20,7 +20,6 @@ If running behind a proxy it may be necessary to clone the above repo and use
 
 - Android
 - Browser
-- iOS (WIP)
 
 ## Initialisation
 
@@ -28,15 +27,15 @@ To initialise the plugin use the following:
 
     var config;
 
-    realTimedatabase = new cordova.plugins.firebase.realtime(config);
-    realTimedatabase.initialise().then(< do your stuff>);
+    realTimeDatabase = new cordova.plugins.firebase.realtime(config);
+    realTimeDatabase.initialise().then(< do your stuff>);
 
 # initialise()
 
 As can be seen above, this returns a promise once the database has been
 successfully initialised.
 
-From thereon access the database via the realTimedatabase variable.
+From thereon access the database via the realTimeDatabase variable.
 
 # Browser nuances
 

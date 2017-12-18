@@ -14,7 +14,7 @@
     "url": "git+https://github.com/travisperkins/cordova-plugin-firebase-realtime.git"
   },
   "author": "Richard Windley <richard.windley@travisperkins.co.uk> (https://github.com/travisperkins)",
-  "license": "MIT",
+  "license": "Apache 2",
   "bugs": {
     "url": "https://github.com/travisperkins/cordova-plugin-firebase-realtime/issues"
   },

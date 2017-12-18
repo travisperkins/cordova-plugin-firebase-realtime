@@ -2,7 +2,7 @@
 
   <name>cordova-plugin-firebase-realtime</name>
   <description>Cordova plugin for Firebase Realtime Database</description>
-  <license>MIT</license>
+  <license>Apache 2</license>
   <keywords>cordova</keywords>
   <repo>https://github.com/travisperkins/cordova-plugin-firebase-realtime</repo>
   <issue>https://github.com/travisperkins/cordova-plugin-firebase-realtime/issues</issue>

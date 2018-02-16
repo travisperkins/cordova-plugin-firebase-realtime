@@ -68,3 +68,11 @@ features are supported.
 - Local persistence
 - Local synchronisation
 - Possibly more
+
+## Versions
+
+# 0.0.2
+- Added ability to specify Firebase version
+
+# 0.0.1
+- Initial release

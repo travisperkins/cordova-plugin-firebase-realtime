@@ -1,4 +1,4 @@
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-firebase-realtime" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-firebase-realtime" version="0.0.2">
 
   <name>cordova-plugin-firebase-realtime</name>
   <description>Cordova plugin for Firebase Realtime Database</description>
@@ -37,6 +37,8 @@
         </platform>
 
         <platform name="android">
+          <preference name="FIREBASE_VERSION" default="11.6.0"/>
+
           <js-module src="www/FirebaseRealtime.js" name="FirebaseRealtime">
             <merges target="cordova.plugins.firebase.realtime"/>
           </js-module>
@@ -49,7 +51,7 @@
 
           <dependency id="cordova-support-google-services" version="~1.0.0"/>
 
-          <framework src="com.google.firebase:firebase-database:11.0.+"/>
+          <framework src="com.google.firebase:firebase-database:$FIREBASE_VERSION"/>
           <framework src="com.google.code.gson:gson:2+"/>
 
           <source-file src="src/android/uk/co/tpplc/cordova/plugin/firebaserealtime/FirebaseRealtimePlugin.java" target-dir="src/uk/co/tpplc/cordova/plugin/firebaserealtime/"/>
